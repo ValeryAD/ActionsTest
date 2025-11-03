@@ -41,7 +41,7 @@ jobs:
         #Ubuntu (ubuntu-latest)
         #macOS (macos-latest)
         #Self-hosted runners
-    name: firstJob
+    name: first Job
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -64,3 +64,15 @@ jobs:
 
       - name: Print workspace
         run: echo $GITHUB_WORKSPACE
+
+      - name: TestStep
+        run: env | sort
+
+  job2:
+    name: Second Job
+    runs-on: windows-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+      - name: Step two
+        run: "Get-ChildItem Env: | Sort-Object Name"
