@@ -6,6 +6,8 @@ name: hello
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
+  #All events are here:
+    #https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows
   push:
     branches: [ "main" ]
   pull_request:
@@ -18,6 +20,8 @@ on:
     #Webhooks - GitHub webhooks, events associated with the repo, but not directly to the code change (Branch creation, 
       #Issues, membership changes)
     #Scheduled - for run at specific date and time, Cron format
+    #for multiple events square brackets should be used:
+    #[push, pull_request]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -26,18 +30,23 @@ on:
 # At least one job is required
 
 jobs:
-  # This workflow contains a single job called "simpleActions", 
-    #can be used any identifier (only digits, letters, underscore and dash are allowed)
-  simpleActions:
+  # This workflow contains a single job called "job1", 
+    #can be used any identifier (only digits, letters, underscore and dash are allowed, 
+    #identifier must start with underscore or letter)
+    #Jobs run in parallel by default
+  job1:
     # The type of runner that the job will run on
       #possible runners:
-        #Windows Server
-        #Ubuntu
-        #macOS
+        #Windows Server (windows-latest)
+        #Ubuntu (ubuntu-latest)
+        #macOS (macos-latest)
         #Self-hosted runners
+    name: firstJob
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
+    # - uses: is used for actions
+    # run: is used for commands (default shell is Bash for Ubuntu and macOS and PowerShell for windows)
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
         #uses attribute identifies an action to use, Defines the location of that action
