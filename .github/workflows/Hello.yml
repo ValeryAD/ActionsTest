@@ -1,4 +1,5 @@
 # This is a basic workflow to help you get started with Actions
+#Not required
 
 name: hello
 
@@ -9,14 +10,24 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+    #possible event triggers:
+    #push - when code added to the repository, only in branch "main"
+    #pull_request
+    #release
+    #workflow_dispatch - Allows you to run this workflow manually from the Actions tab
+    #Webhooks - GitHub webhooks, events associated with the repo, but not directly to the code change (Branch creation, 
+      #Issues, membership changes)
+    #Scheduled - for run at specific date and time, Cron format
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
+# At least one job is required
+
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  simpleActions:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
