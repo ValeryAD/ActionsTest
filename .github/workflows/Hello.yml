@@ -26,9 +26,15 @@ on:
 # At least one job is required
 
 jobs:
-  # This workflow contains a single job called "build"
+  # This workflow contains a single job called "simpleActions", 
+    #can be used any identifier (only digits, letters, underscore and dash are allowed)
   simpleActions:
     # The type of runner that the job will run on
+      #possible runners:
+        #Windows Server
+        #Ubuntu
+        #macOS
+        #Self-hosted runners
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -45,3 +51,6 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+      - name: Print workspace
+        run: echo $GITHUB_WORKSPACE
