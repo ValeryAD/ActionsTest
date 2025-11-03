@@ -76,3 +76,11 @@ jobs:
         uses: actions/checkout@v4
       - name: Step two
         run: "Get-ChildItem Env: | Sort-Object Name"
+
+  job3:
+    name: third job
+    needs: [job1, job2] # the job will wait till the first two jobs finish (job1 and job2 will run in parallel).
+    runs-on: ubuntu-latest
+    steps:
+      - name: first step
+        run: echo this job will run after the first two.
