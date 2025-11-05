@@ -1,4 +1,8 @@
 name: Using artifacts
+
+env:
+  FILE_NAME: my_artifact.txt
+
 on: 
   workflow_dispatch:
 jobs:
@@ -8,7 +12,9 @@ jobs:
       steps:
         - name: create-and-log-artifact
           run: |
-              echo "this text for artifact" >> my_artifact.txt
-              cat my_artifact.txt
+              echo "this text for artifact" >> ${{ env.FILE_NAME }}
+              cat ./${{ env.FILE_NAME }}
+        - name: upload artifact
+          uses: actions/upload-artifact@v4
 
             
