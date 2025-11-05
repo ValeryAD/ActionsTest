@@ -1,0 +1,14 @@
+name: Using artifacts
+on: 
+  workflow_dispatch:
+jobs:
+  job1:
+      name: Generate artifact
+      runs-on: ubuntu-latest
+      steps:
+        - name: create-and-log-artifact
+          run: |
+              "this text for artifact" >> my_artifact.txt
+              cat my_arifact.txt
+
+            
