@@ -9,6 +9,6 @@ jobs:
         - name: create-and-log-artifact
           run: |
               echo "this text for artifact" >> my_artifact.txt
-              cat my_arifact.txt
+              cat my_artifact.txt
 
             
