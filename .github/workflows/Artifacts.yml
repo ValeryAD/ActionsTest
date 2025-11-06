@@ -34,7 +34,7 @@ jobs:
           name: My_Artifact
         
       - name: print downloaded artifact
-        run: cat ./$${{ env.FILE_NAME }}
+        run: cat ./${{ env.FILE_NAME }}
             
           
         
