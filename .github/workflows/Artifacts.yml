@@ -18,7 +18,7 @@ jobs:
         - name: upload artifact
           uses: actions/upload-artifact@v4
           with:
-            name: ${{ env.FILE_NAME }}
+            name: My_Artifact
             path: ./${{ env.FILE_NAME }}
   
   job2:
@@ -29,7 +29,7 @@ jobs:
       - name: artifact download
         uses: actions/download-artifact@v4
         with:
-          name: ${{ env.FILE_NAME }}
+          name: My_Artifact
         
       - name: print downloaded artifact
         run: cat ./$${{ env.FILE_NAME }}
