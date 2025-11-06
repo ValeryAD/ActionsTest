@@ -29,10 +29,10 @@ jobs:
       - name: artifact download
         uses: actions/download-artifact@v4
         with:
-          name: ${{ FILE_NAME }}
+          name: ${{ env.FILE_NAME }}
         
       - name: print downloaded artifact
-        run: cat ./${{ FILE_PATH }}
+        run: cat ./$${{ env.FILE_NAME }}
             
           
         
