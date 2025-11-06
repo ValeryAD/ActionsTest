@@ -25,21 +25,6 @@ jobs:
       name: download artifact
       runs-on: ubuntu-latest
       steps:
-      
-      - name: Get GitHub App token
-        id: get-token
-        uses: actions/create-github-app-token@v1
-        with:
-          owner: 'me'
-          app-id: ${{ secrets.APPLICATION_ID }}
-          private-key: ${{ secrets.APPLICATION_PRIVATE_KEY }}
-
-      - name: Download artifact from build job
-        uses: actions/download-artifact@v4
-        with:
-          run-id: ${{ github.event.workflow_run.id }}
-          github-token: ${{ github.token }}
-          name: java-app
      
       - name: artifact download
         uses: actions/download-artifact@v4
