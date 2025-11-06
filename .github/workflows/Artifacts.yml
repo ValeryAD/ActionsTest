@@ -11,10 +11,6 @@ jobs:
       name: Generate artifact
       runs-on: ubuntu-latest
       steps:
-
-       
-        - name: checkout project
-          uses: actions/checkout@v4
       
         - name: create-and-log-artifact
           run: |
@@ -28,12 +24,10 @@ jobs:
   
   job2:
       name: download artifact
+      needs: job1
       runs-on: ubuntu-latest
       steps:
 
-      - name: checkout projuect
-        uses: actions/checkout@v4
-     
       - name: artifact download
         uses: actions/download-artifact@v4
         with:
