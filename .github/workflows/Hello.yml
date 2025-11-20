@@ -8,14 +8,19 @@ on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   #All events are here:
     #https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows
-  push:
-    branches:   #trigger will work for specified branches only:
-      - main
-      - develop
-  pull_request:
-    branches: [ "main", "hotfix" ] # there's also ability to ignore branches with "branches-ignore" option
+
+  #suppress to not trigger launch with each commit  
+  # push:
+  #   branches:   #trigger will work for specified branches only:
+  #     - main
+  #     - develop
+  # pull_request:
+  #   branches: [ "main", "hotfix" ] # there's also ability to ignore branches with "branches-ignore" option
                                    # using special characters for path: 
                                    #https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#filter-pattern-cheat-sheet
+    
+    
+    
     
     #possible event triggers:
     #push - when code added to the repository, only in branch "main"
