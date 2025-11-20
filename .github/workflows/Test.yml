@@ -21,11 +21,10 @@ jobs:
     runs-on: ubuntu-latest
    
     steps:
-    
-      - name: Run bash script
-      - shell: bash
-        run: |
-          echo 'Test step'
-          echo ${{ inputs.MY_PARAMETER }}
-          echo "Parameter within text ${{ inputs.MY_PARAMETER }}"
+       - name: Run bash script
+       - shell: bash
+         run: |
+            echo 'Test step'
+            echo ${{ inputs.MY_PARAMETER }}
+            echo "Parameter within text ${{ inputs.MY_PARAMETER }}"
 
