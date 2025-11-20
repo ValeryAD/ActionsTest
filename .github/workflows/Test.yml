@@ -1,0 +1,31 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+   workflow_dispatch:
+     inputs:
+       MY_PARAMETER:
+         description: 'Select an option'
+         required: true
+         type: choice
+         default: Option 1
+         options:
+           - Option 1
+           - Option 2
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  firstJob:
+    runs-on: ubuntu-latest
+   
+    steps:
+    
+      - name: Run bash script
+      - shell: bash
+        run: |
+          echo 'Test step'
+          echo ${{ inputs.MY_PARAMETER }}
+          echo "Parameter within text ${{ inputs.MY_PARAMETER }}"
+
